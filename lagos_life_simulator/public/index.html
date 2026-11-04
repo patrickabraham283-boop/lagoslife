@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagos Life Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+  <div id="loading" class="overlay"><div class="loader"></div><h2>LOADING LAGOS</h2><p>Preparing the city...</p></div>
+
+  <section id="startScreen" class="overlay start-screen">
+    <div class="brand-mark">LL</div>
+    <p class="eyebrow">YOUR CITY. YOUR STORY.</p>
+    <h1>LAGOS <span>LIFE</span><br>SIMULATOR</h1>
+    <p class="intro">Build your hustle. Explore the streets. Make Lagos yours.</p>
+    <input id="playerName" maxlength="16" placeholder="Enter your player name" value="New Lagosian">
+    <button id="playBtn">ENTER LAGOS <span>→</span></button>
+    <small>3D MULTIPLAYER CITY EXPERIENCE</small>
+  </section>
+
+  <header class="topbar">
+    <div class="mini-brand"><b>LL</b><span>LAGOS LIFE <small>SIMULATOR</small></span></div>
+    <div class="location"><i></i><span id="district">LAGOS ISLAND</span></div>
+    <div class="wallet"><span>₦</span><strong id="money">25,000</strong></div>
+  </header>
+
+  <div class="hud">
+    <div class="player-card"><div class="avatar">●</div><div><b id="hudName">PLAYER</b><small>NEW RESIDENT</small></div></div>
+    <div class="online"><i></i><span id="onlineCount">1</span> ONLINE</div>
+  </div>
+
+  <div class="mission-card">
+    <small>YOUR FIRST DAY</small>
+    <b>Explore the neighbourhood</b>
+    <span>Walk around and meet other players.</span>
+  </div>
+
+  <div class="controls-help">
+    <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> MOVE</span>
+    <span><kbd>SHIFT</kbd> RUN</span>
+    <span><kbd>SPACE</kbd> JUMP</span>
+    <span><kbd>ENTER</kbd> CHAT</span>
+  </div>
+
+  <div class="chat-panel">
+    <div class="chat-head"><b>STREET CHAT</b><span>LIVE</span></div>
+    <div id="chatMessages" class="chat-messages"><p class="system-msg">Welcome to Lagos. Be safe out there!</p></div>
+    <form id="chatForm"><input id="chatInput" maxlength="120" placeholder="Say something..."><button>➤</button></form>
+  </div>
+
+  <div id="toast"></div>
+  <div class="mobile-controls">
+    <div class="dpad">
+      <button data-key="w">▲</button>
+      <div><button data-key="a">◀</button><button data-key="s">▼</button><button data-key="d">▶</button></div>
+    </div>
+    <button id="runButton" class="run-button">RUN</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
